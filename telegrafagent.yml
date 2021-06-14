@@ -7,12 +7,14 @@
       state: directory
   - name: Copy telegraf.conf into C:\Program Files\telegraf
     win_copy:
-      src: /home/a-fribeiro/DaaS/telegraf/telegraf.conf
+      src: E:\Tools\telegraf\telegraf.conf
       dest: C:\Program Files\telegraf\telegraf.conf
+      remote_src: yes
   - name: Copy telegraf.exe into C:\Program Files\telegraf
     win_copy:
-      src: /home/a-fribeiro/DaaS/telegraf/telegraf.exe
+      src: E:\Tools\telegraf\telegraf.exe
       dest: C:\Program Files\telegraf\telegraf.exe
+      remote_src: yes
   - name: Run a command under PowerShell to create telegraf service
     win_shell: C:\PROGRA~1\telegraf\telegraf.exe --service install
   - name: start telegraf service
